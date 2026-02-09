@@ -1,0 +1,2 @@
+2026-02-04 18:52:49,736 - ERROR - Invalid input: Marks out of range: -10.0
+2026-02-04 18:52:49,738 - ERROR - Invalid input: could not convert string to float: 'abc'
