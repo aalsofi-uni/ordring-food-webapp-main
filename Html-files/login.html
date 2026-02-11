@@ -731,6 +731,7 @@ storageBucket: "foodi-uni.appspot.com",
     document.getElementById("loginbtn").addEventListener("click", async () => {
       const email = document.getElementById("login-email").value;
       const password = document.getElementById("login-password").value;
+      const username = document.getElementById("login-username").value;
 
       // Clear old message
       loginMessage.textContent = "";
@@ -738,10 +739,13 @@ storageBucket: "foodi-uni.appspot.com",
 
       try {
         await signInWithEmailAndPassword(auth, email, password);
-
+     sessionStorage.setItem("loggedInUser", username);
         // ✅ Success
         loginMessage.style.color = "green";
         loginMessage.textContent = "Login successful! Redirecting...";
+
+        // Save username in session BEFORE redirect
+       
 
         setTimeout(() => {
           window.location.href = "index.html";
@@ -766,6 +770,7 @@ storageBucket: "foodi-uni.appspot.com",
     });
   });
 </script>
+
 
 
 

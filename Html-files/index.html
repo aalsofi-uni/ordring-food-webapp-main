@@ -412,7 +412,7 @@
 
                     
 
-                    <li class="nav-item">
+                    <li  class="nav-item">
                         <a class="nav-link" href="Html-files/login.html" style="color: black;">
 
                             
@@ -421,6 +421,10 @@
 
                         </a>
                     </li>
+                    <button id="loginBtn" onclick="location.href='login.html'">
+  Login
+</button>
+<span id="userDisplay" style="font-weight:bold; color:red"> hi</span>
 
 
                     <li class="nav-item">
@@ -876,24 +880,24 @@
             </script>
                 <div class="box my-auto col-md-4 col-xl-3" data-aos="zoom-out-left" data-aos-duration="1000"
                     data-aos-offset="170" data-aos-easing="ease-in-out">
-                    <img src="./icons/motorbike.png" alt="" class="service-icon">
+                    <img src="../icons/motorbike.png" alt="" class="service-icon">
                     <h1>Online <br>Delivery</h1>
                     <a href="/Html-files/add-address.html" class="btn btn-outline-light border border-light">Order Online</a>
             </div>
                 <div class="box my-auto col-md-4 col-xl-3" data-aos="zoom-out-left" data-aos-duration="1000"
                     data-aos-offset="170" data-aos-easing="ease-in-out">
-                    <img src="./icons/take-away.png" alt="" class="service-icon">
+                    <img src="../icons/take-away.png" alt="" class="service-icon">
 
                     <h1>Click & <br>Collect</h1>
-                    <a href="/Html-files/cart.html" class="btn btn-outline-light border border-light">Take out Order</a>
+                    <a href="../Html-files/cart.html" class="btn btn-outline-light border border-light">Take out Order</a>
                 </div>
 
                 <div class="box my-auto col-md-4 col-xl-3" data-aos="zoom-out-left" data-aos-duration="1000"
                     data-aos-offset="170" data-aos-easing="ease-in-out">
-                    <img src="/icons/dining-table.png" alt="" class="service-icon">
+                    <img src="../icons/dining-table.png" alt="" class="service-icon">
 
                     <h1>Restaurant<br> Dining</h1>
-                    <a href="/Html-files/book-table.html" class="btn btn-outline-light border border-light">Book Table </a>
+                    <a href="../Html-files/book-table.html" class="btn btn-outline-light border border-light">Book Table </a>
                 </div>
             </div>
         </div>
@@ -1313,7 +1317,27 @@
             "allowedOrigins": []
         });
     </script>
+    <script>
 
+window.addEventListener("DOMContentLoaded", () => {
+  const user = sessionStorage.getItem("loggedInUser");
+  const loginBtn = document.getElementById("loginBtn");
+  const userDisplay = document.getElementById("userDisplay");
+
+  if (user) {
+    // Hide login button
+    if (loginBtn) loginBtn.style.display = "none";
+
+    // Show username
+    if (userDisplay) {
+      userDisplay.style.display = "inline-block";
+      userDisplay.textContent = "Hi, " + user;
+    }
+  }
+});
+
+
+</script>
 </body>
 
 </html>
