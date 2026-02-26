@@ -76,7 +76,7 @@
      </script>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a href="../index.html" class="navbar-brand opacity-75 flex-fill">
+            <a href="index.html" class="navbar-brand opacity-75 flex-fill">
                 <img src="../Images/logo/Foodielogo.png" height="40" />
             </a>
             <button
@@ -95,7 +95,7 @@
             >
                 <ul class="navbar-nav center-links">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../index.html">
+                        <a class="nav-link" aria-current="page" href="index.html">
                             <i class="fas fa-home"></i> Home
                         </a>
                     </li>
@@ -143,16 +143,27 @@
             </div>
             <div class="collapse navbar-collapse hamburgeritems enddiv order-3">
                 <ul class="navbar-nav end-links">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Html-files/login.html">
-                            <i class="fas fa-sign-in-alt"></i> Login
+                    <div id="auth-section">
+                    <li   class="nav-item">
+                        <a class="nav-link" href="login.html" style="color: black;">
+
+                            
+
+                            <i class="fa-solid fa-sign-in"></i> Login
+
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Html-files/signup.html">
-                            <i class="fas fa-user-plus"></i> Sign-Up
+        
+                  <!----  <li class="nav-item">
+                        <a class="nav-link" href="signup.html" style="color: black;">
+
+                            <i class="fa-solid fa-user"></i> Sign-Up
+
+                            
+
                         </a>
-                    </li>
+                    </li>-->
+                </div>
                     <li class="nav-item">
                         <a class="nav-link" href="../Html-files/cart.html">
                             <i class="fas fa-shopping-cart"></i> Cart
@@ -304,6 +315,26 @@
         });
       </script>
 
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const user = localStorage.getItem("loggedInUser");
+
+  const authSection = document.getElementById("auth-section");
+  const userSection = document.getElementById("user-section");
+  const displayUsername = document.getElementById("username");
+
+  if (user) {
+    // User is logged in
+    authSection.style.display = "none";
+    userSection.style.display = "block";
+    displayUsername.textContent = user;
+  } else {
+    // User is not logged in
+    authSection.style.display = "block";
+    userSection.style.display = "none";
+  }
+});
+</script>
 
     
 

@@ -1,6 +1,28 @@
 {
   "dependencies": {
     "aos": "^2.3.4",
-    "firebase-admin": "^13.6.0"
-  }
+    "crypto": "^1.0.1",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.6.0",
+    "nodemailer": "^8.0.1"
+  },
+  "name": "food-ordering-website-main",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Foodie</h1>\r <h2 align=\"center\" >Food Ordering Website</h2>",
+  "main": "cartitems.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aalsofi-uni/ordring-food-webapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aalsofi-uni/ordring-food-webapp/issues"
+  },
+  "homepage": "https://github.com/aalsofi-uni/ordring-food-webapp#readme"
 }

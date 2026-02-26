@@ -348,13 +348,13 @@
                     <div class="collapse navbar-collapse hamburgeritems centerdiv order-2 order-lg-0">
                         <ul class="navbar-nav center-links">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+                                <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../Html-files/menu.html"><i class="fa-solid fa-bars"></i> Menu</a>
+                                <a class="nav-link" href="menu.html"><i class="fa-solid fa-bars"></i> Menu</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link services" href="../Html-files/services.html" aria-expanded="false"><i class="fa-solid fa-gear"></i> Services</a>
+                                <a class="nav-link services" href="services.html" aria-expanded="false"><i class="fa-solid fa-gear"></i> Services</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Ordering options</a></li>
                                     <li><a class="dropdown-item" href="#">Order Tracking</a></li>
@@ -363,10 +363,10 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../Html-files/contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
+                                <a class="nav-link" href="contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../Html-files/offers.html"><i class="fa-solid fa-tag"></i> Offers</a>
+                                <a class="nav-link" href="offers.html"><i class="fa-solid fa-tag"></i> Offers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="RateUs.html">
@@ -380,18 +380,44 @@
                     </div>
                     <div class="collapse navbar-collapse hamburgeritems enddiv order-3 ">
                         <ul class="navbar-nav end-links">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../Html-files/login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../Html-files/signup.html"><i class="fa-solid fa-user"></i> Sign-Up</a>
-                            </li>
+                             <div id="auth-section">
+                    <li   class="nav-item">
+                        <a class="nav-link" href="login.html" style="color: black;">
+
+                            
+
+                            <i class="fa-solid fa-sign-in"></i> Login
+
+                        </a>
+                    </li>
+        
+                  <!----  <li class="nav-item">
+                        <a class="nav-link" href="signup.html" style="color: black;">
+
+                            <i class="fa-solid fa-user"></i> Sign-Up
+
+                            
+
+                        </a>
+                    </li>-->
+                </div>
+
+<div id="user-section" style="display:none">
+  <!--Welcome, <span id="Username"></span>!-->
+  
+     <a id="logout-Btn" class="nav-link" href="./login.html" style="color: black;">
+ <i class="fa-solid fa-sign-in"></i> Logout
+     </a>
+     <p>Logged in as: <span id="userEmail"></span></p>
+</div>
                             <li class="nav-item">
                                 <a class="nav-link active" href="../Html-files/cart.html">
                                     Cart
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </a>
+
                             </li>
+
                         </ul>
                     </div>
                 </div>
@@ -497,12 +523,14 @@
                 <button id="applyCouponButton" onclick="applyFirstTimeDiscount()">Apply</button>
             </div>
 
-            <p class="congomessagebox">
-                <button type="submit" class="butt" id="orderNowButton">Order Now</button>
-                <!-- id="orderNowButton" class="butt"-->
+    
+
+<!--<p class="congomessagebox">
+                
+         
 
 
-                <!--Adding donate button-->
+             
                 <div class="donate-button">
                     <button id="donateBtn">Donate Now</button>
                 </div>
@@ -513,7 +541,7 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
 
-                    <!-- <h1>Congratulations!</h1> -->
+                  
                     <center><img src="../Images/party-popper.jpg" width="70" height="100"><img
                             src="../Images/congratulation-text.jpg" width="290" height="120"> <img
                             src="../Images/party-popper.jpg" width="70" height="100"></center>
@@ -529,9 +557,10 @@
                     <center><img src="../Images/social-media-symbols.png" height="30"></center>
                 </div>
             </div>
-            </p>
-
+            </p>-->
+           <button type="submit" class="butt" id="ordernowbutton">Order Now</button>
         </div>
+     
     </section>
    
 
@@ -634,18 +663,20 @@
                 </div>
 
 
-                <div class="col-6 col-md-3 col-xl-4">
-                    <form id="contactForm" action="https://formsubmit.co/xyz@gmail.com" method="POST">
+                    <div class="col-6 col-md-3 col-xl-4">
+                       <!-- <form id="contactForm" action="https://formsubmit.co/xyz@gmail.com" method="POST">-->
+                        <form id="contactForm">  
                         <h3 class="text-center mb-3">Contact Us!</h3>
-                        <input type="email" id="footer-email" name="email" placeholder="Your Email"
-                            class="text-center form-control mb-2" required>
-                        <textarea id="footer-message" name="footer-message" placeholder="Your Message"
-                            class="text-center form-control mb-2" required></textarea>
-                        <div class="d-grid gap-2 col-12">
-                            <button type="submit" class="btn btn-danger">Send Message</button>
-                        </div>
-                    </form>
-                </div>
+                            <input type="email" id="footer-email" name="email" placeholder="Your Email"
+                                class="text-center form-control mb-2" required>
+                            <textarea id="footer-message" name="footer-message" placeholder="Your Message"
+                                class="text-center form-control mb-2" required></textarea>
+                            <div class="d-grid gap-2 col-12">
+                                <button type="submit" class="btn btn-danger" id="footer-submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+
 
 
 
@@ -764,6 +795,250 @@
     });
     
         </script>
+
+         <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const user = localStorage.getItem("loggedInUser");
+
+  const authSection = document.getElementById("auth-section");
+  const userSection = document.getElementById("user-section");
+  const displayUsername = document.getElementById("username");
+
+  if (user) {
+    // User is logged in
+    authSection.style.display = "none";
+    userSection.style.display = "block";
+    displayUsername.textContent = user;
+  } else {
+    // User is not logged in
+    authSection.style.display = "block";
+    userSection.style.display = "none";
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<!--<script>
+  // Initialize EmailJS (replace with your Public Key)
+  emailjs.init("npcEIBGLCvNUKmJ-Y");
+
+  function generateOrderNumber() {
+    return "ORD-" + Math.floor(100000 + Math.random() * 900000);
+  }
+
+  document.getElementById("orderNowButton").addEventListener("click", function () {
+
+    const orderNumber = generateOrderNumber();
+
+    const templateParams = {
+      order_number: orderNumber,
+      to_email: "aalsofi@hotmail.com"
+    };
+
+    emailjs.send("service_iaotbjf", "template_82bvbdb", templateParams)
+      .then(function () {
+        alert("Order sent successfully! Order ID: " + orderNumber);
+      })
+      .catch(function (error) {
+        console.error("Email failed:", error);
+        alert("Failed to send order.");
+      });
+
+  });
+</script>-->
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBT3IH3TamNFw0WKeL-F3VotogL7on8f-Q",
+    authDomain: "foodi-uni.firebaseapp.com",
+    projectId: "foodi-uni",
+    storageBucket: "foodi-uni.appspot.com",
+    messagingSenderId: "488970239781",
+    appId: "1:488970239781:web:b3a9d5f600243d875ba4cc",
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("npcEIBGLCvNUKmJ");
+</script>
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS
+  emailjs.init("npcEIBGLCvNUKmJ-Y");
+
+  // Generate order number
+  function generateOrderNumber() {
+    return "ORD-" + Math.floor(100000 + Math.random() * 900000);
+  }
+
+  document.getElementById("ordernowbutton").addEventListener("click", function () {
+
+    const cartContainer = document.getElementById("cart-items");
+
+    // 1️⃣ Check if cart is visible
+    if (!cartContainer || !cartContainer.offsetParent) {
+      alert("Cart is not visible! Please open your cart.");
+      return;
+    }
+
+    // 2️⃣ Check if cart has items
+    const cartItems = cartContainer.querySelectorAll(".cart-item");
+    if (cartItems.length === 0) {
+      alert("Your cart is empty! Please add items before ordering.");
+      return;
+    }
+
+    // 3️⃣ Get email from page
+    const userEmail = document.getElementById("userEmail").textContent.trim();
+    if (!userEmail) {
+      alert("No email found. Please login first.");
+      return;
+    }
+
+    // 4️⃣ Generate order number
+    const orderNumber = generateOrderNumber();
+
+    // 5️⃣ Send email
+    const templateParams = {
+      order_number: orderNumber,
+      to_email: userEmail
+    };
+
+    emailjs.send("service_iaotbjf", "template_82bvbdb", templateParams)
+      .then(() => {
+        alert("Order sent to " + userEmail + "\nOrder ID: " + orderNumber);
+      })
+      .catch(error => {
+        console.error("Email failed:", error);
+        alert("Failed to send email. Check console for errors.");
+      });
+
+  });
+
+  // Firebase auth listener
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("User detected:", user.email);
+      document.getElementById("userEmail").textContent = user.email;
+    } else {
+      console.log("No user logged in");
+      window.location.href = "login.html"; // redirect if not logged in
+    }
+  });
+</script>
+
+<!--
+<script>
+  let loggedInUserEmail = "";
+
+  // Wait for Firebase auth
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      loggedInUserEmail = user.email;
+      console.log("User detected:", loggedInUserEmail);
+    } else {
+      alert("Please login first");
+      window.location.href = "login.html";
+    }
+  });
+
+  function generateOrderNumber() {
+    return "ORD-" + Math.floor(100000 + Math.random() * 900000);
+  }
+
+  document.getElementById("ordernowbutton").addEventListener("click", function () {
+
+    if (!loggedInUserEmail) {
+      alert("User not ready. Please wait...");
+      return;
+    }
+
+    const orderNumber = generateOrderNumber();
+
+    const templateParams = {
+      order_number: orderNumber,
+      to_email: loggedInUserEmail
+    };
+
+    emailjs.send("service_iaotbjf", "template_82bvbdb", templateParams)
+      .then(function () {
+        alert("Order sent to " + loggedInUserEmail + 
+              "\nOrder ID: " + orderNumber);
+      })
+      .catch(function (error) {
+        console.error("Email failed:", error);
+      });
+
+  });
+</script>-->
+
+
+
+<script>
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("User detected:", user.email);
+      document.getElementById("userEmail").textContent = user.email;
+    } else {
+      console.log("No user logged in");
+      window.location.href = "login.html"; // redirect if not logged in
+    }
+  });
+</script>
+<script>
+
+  // Initialize EmailJS
+  emailjs.init("npcEIBGLCvNUKmJ-Y"); // replace
+
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function(event) {
+
+    event.preventDefault(); // ✅ STOP PAGE REFRESH
+
+    const email = document.getElementById("footer-email").value;
+    const message = document.getElementById("footer-message").value;
+
+    if (!email || !message) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    emailjs.send(
+      "service_iaotbjf", 
+      "template_aiuupch",
+      {
+        from_email: email,
+        message: message
+      }
+    )
+    .then(function() {
+      alert("Email sent successfully!");
+      form.reset();
+    })
+    .catch(function(error) {
+      alert("Email failed!");
+      console.log(error);
+    });
+
+  });
+
+</script>
 </body>
 
 </html>

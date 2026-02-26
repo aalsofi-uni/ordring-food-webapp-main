@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fuggles&family=Mooli&family=Oswald:wght@600&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -31,7 +32,7 @@
     <link rel="stylesheet" href="../Css-files/footer.css">
 
     <link rel="stylesheet" href="../Css-files/mode-toggler.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="../Css-files/googletranslate.css">
@@ -283,7 +284,7 @@
       </div> -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <!-- Brand Logo -->
+            <!-- Brand ino -->
 
             
             <a href="index.html">
@@ -306,14 +307,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Html-files/menu.html" style="color: black;">
+                        <a class="nav-link" href="menu.html" style="color: black;">
 
                             <i class="fa-solid fa-bars"></i> Our Menu
                         </a>
                     </li>
                     <li class="nav-item dropdown">
 
-                        <a class="nav-link dropdown-toggle" href="Html-files/services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                        <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
                             <i class="fa-solid fa-gear"></i> Services
                         </a>
 
@@ -335,7 +336,7 @@
                    
                     <li class="nav-item">
 
-                        <a class="nav-link" href="Html-files/contact.html" style="color: black;">
+                        <a class="nav-link" href="contact.html" style="color: black;">
                             <i class="fa-solid fa-phone"></i> Contact Us 
                         </a>
                     </li>
@@ -346,7 +347,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Html-files/offers.html" style="color: black;">
+                        <a class="nav-link" href="offers.html" style="color: black;">
 
                             <i class="fa-solid fa-tag"></i> Offers
 
@@ -354,7 +355,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="Html-files/RateUs.html" style="color: black;">
+                        <a class="nav-link" href="RateUs.html" style="color: black;">
                             <i class="fa-solid fa-star"></i> Rate Us
                         </a>
                     </li>
@@ -375,7 +376,7 @@
                     <i class="fa-solid fa-house"></i> 
                     Home
                 </a>
-                <a class="page-scroll" href="Html-files/menu.html">
+                <a class="page-scroll" href="/menu.html">
                     <i class="fa-solid fa-bars"></i> Menu
                 </a>
                 <a class="page-scroll" href="Html-files/services.html">
@@ -387,7 +388,7 @@
                 <a class="page-scroll active-link" href="Html-files/login.html">
                     <i class="fa-solid fa-question"></i> FAQ
                 </a>
-                <a class="page-scroll active-link" href="Html-files/login.html">
+                <a class="page-scroll active-link" href="Html-files/offers.html">
                     <i class="fa-solid fa-tag"></i> Offers
                 </a>
                 <a class="page-scroll active-link" href="Html-files/login.html">
@@ -411,9 +412,9 @@
                 <ul class="navbar-nav end-links">
 
                     
-
-                    <li  class="nav-item">
-                        <a class="nav-link" href="Html-files/login.html" style="color: black;">
+                <div id="auth-section">
+                    <li   class="nav-item">
+                        <a class="nav-link" href="login.html" style="color: black;">
 
                             
 
@@ -421,23 +422,27 @@
 
                         </a>
                     </li>
-                    <button id="loginBtn" onclick="location.href='login.html'">
-  Login
-</button>
-<span id="userDisplay" style="font-weight:bold; color:red"> hi</span>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="Html-files/signup.html" style="color: black;">
+        
+                  <!----  <li class="nav-item">
+                        <a class="nav-link" href="signup.html" style="color: black;">
 
                             <i class="fa-solid fa-user"></i> Sign-Up
 
                             
 
                         </a>
-                    </li>
+                    </li>-->
+                </div>
+
+<div id="user-section" style="display:none">
+  <!--Welcome, <span id="Username"></span>!-->
+  
+     <a id="logout-Btn"  href="login.html" class="nav-link" style="color: black;cursor: pointer;">
+ <i class="fa-solid fa-sign-in"></i> Logout
+     </a>
+</div>
                     <li class="nav-item">
-                        <a class="nav-link" href="Html-files/cart.html" style="color: black;">
+                        <a class="nav-link" href="cart.html" style="color: black;">
 
                             Cart <i class="fa-solid fa-cart-shopping"></i>
 
@@ -482,7 +487,7 @@
                     <p class="slider-text slider-reveal">
                         come with family & feel the joy of mouthwatering food
                     </p>
-                    <a href="Html-files/menu.html" class="btn btn-danger slider-button slider-reveal mx-auto" role="button">
+                    <a href="./menu.html" class="btn btn-danger slider-button slider-reveal mx-auto" role="button">
                         <span class="text text-1">VIEW OUR MENU</span>
                     </a>
                 </div>
@@ -499,7 +504,7 @@
                     <p class="slider-text slider-reveal">
                         come with family & feel the joy of mouthwatering food
                     </p>
-                    <a href="Html-files/menu.html" class="btn btn-danger slider-button slider-reveal mx-auto" role="button">
+                    <a href="./menu.html" class="btn btn-danger slider-button slider-reveal mx-auto" role="button">
                         VIEW OUR MENU
                     </a>
                 </div>
@@ -795,7 +800,7 @@
                 </div>
             </div>
 
-            <!-- <div class="col-md-4">
+            <!-- <div cass="col-md-4">
                 <div class="card rounded-5">
                     <div class="img-container">
                         <img src="https://shahidining.com.au/wp-content/uploads/2020/05/secret-to-indian-flavour-1536x864.jpg"
@@ -1219,14 +1224,15 @@
 
 
                     <div class="col-6 col-md-3 col-xl-4">
-                        <form id="contactForm" action="https://formsubmit.co/xyz@gmail.com" method="POST">
-                            <h3 class="text-center mb-3">Contact Us!</h3>
+                       <!-- <form id="contactForm" action="https://formsubmit.co/xyz@gmail.com" method="POST">-->
+                        <form id="contactForm">  
+                        <h3 class="text-center mb-3">Contact Us!</h3>
                             <input type="email" id="footer-email" name="email" placeholder="Your Email"
                                 class="text-center form-control mb-2" required>
                             <textarea id="footer-message" name="footer-message" placeholder="Your Message"
                                 class="text-center form-control mb-2" required></textarea>
                             <div class="d-grid gap-2 col-12">
-                                <button type="submit" class="btn btn-danger">Send Message</button>
+                                <button type="submit" class="btn btn-danger" id="footer-submit">Send Message</button>
                             </div>
                         </form>
                     </div>
@@ -1317,27 +1323,97 @@
             "allowedOrigins": []
         });
     </script>
-    <script>
 
-window.addEventListener("DOMContentLoaded", () => {
-  const user = sessionStorage.getItem("loggedInUser");
-  const loginBtn = document.getElementById("loginBtn");
-  const userDisplay = document.getElementById("userDisplay");
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const user = localStorage.getItem("loggedInUser");
+
+  const authSection = document.getElementById("auth-section");
+  const userSection = document.getElementById("user-section");
+  const displayUsername = document.getElementById("username");
 
   if (user) {
-    // Hide login button
-    if (loginBtn) loginBtn.style.display = "none";
-
-    // Show username
-    if (userDisplay) {
-      userDisplay.style.display = "inline-block";
-      userDisplay.textContent = "Hi, " + user;
-    }
+    // User is logged in
+    authSection.style.display = "none";
+    userSection.style.display = "block";
+    displayUsername.textContent = user;
+  } else {
+    // User is not logged in
+    authSection.style.display = "block";
+    userSection.style.display = "none";
   }
 });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const user = localStorage.getItem("loggedInUser");
 
+  const authSection = document.getElementById("auth-section");
+  const userSection = document.getElementById("user-section");
+  const displayUsername = document.getElementById("username");
+  const logoutBtn = document.getElementById("logout-Btn");
+
+  if (user) {
+    // User is logged in
+    authSection.style.display = "none";
+    userSection.style.display = "block";
+    displayUsername.textContent = user;
+  } else {
+    // User is not logged in
+    authSection.style.display = "block";
+    userSection.style.display = "none";
+  }
+
+  // ✅ Logout logic with redirect
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("loggedInUser"); // Clear session
+      window.location.href = "login.html"; // Redirect to login page
+    });
+  }
+});
+</script>
+
+<script>
+
+  // Initialize EmailJS
+  emailjs.init("npcEIBGLCvNUKmJ-Y"); // replace
+
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function(event) {
+
+    event.preventDefault(); // ✅ STOP PAGE REFRESH
+
+    const email = document.getElementById("footer-email").value;
+    const message = document.getElementById("footer-message").value;
+
+    if (!email || !message) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    emailjs.send(
+      "service_iaotbjf", 
+      "template_aiuupch",
+      {
+        from_email: email,
+        message: message
+      }
+    )
+    .then(function() {
+      alert("Email sent successfully!");
+      form.reset();
+    })
+    .catch(function(error) {
+      alert("Email failed!");
+      console.log(error);
+    });
+
+  });
 
 </script>
+
 </body>
 
 </html>

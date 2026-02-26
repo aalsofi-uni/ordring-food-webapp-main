@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send Email</title>
+
+  
+
+</head>
+<body>
+<input type="email" id="chinput" placeholder="Enter your email">
+<button id="resetButton">Reset</button>
+<button id="chbutton">check</button>
+
+<!-- Firebase scripts -->
+
+<!-- EmailJS script 
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+ <script>
+window.onload = function resetPassword() {
+  // Initialize EmailJS
+  emailjs.init("npcEIBGLCvNUKmJ-Y");
+
+  // Initialize Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyBT3IH3TamNFw0WKeL-F3VotogL7on8f-Q",
+    authDomain: "foodi-uni.firebaseapp.com",
+    databaseURL: "https://foodi-uni-default-rtdb.firebaseio.com", // <-- Add your DB URL
+    projectId: "foodi-uni",
+    storageBucket: "foodi-uni.appspot.com",
+    messagingSenderId: "488970239781",
+    appId: "1:488970239781:web:b3a9d5f600243d875ba4cc",
+  };
+  const myApp = firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+  const resetButton = document.getElementById("resetButton");
+  const emailInput = document.getElementById("emailInput");
+
+ document.getElementById("resetButton").addEventListener("click", () => {
+    const email = emailInput.value.trim();
+
+    if (email === "") {
+      alert("Please enter your email.");
+      return;
+    }
+
+    // Check if email exists in Firebase
+    database.ref("users").orderByChild("email").equalTo(email).once("value")
+      .then(snapshot => {
+        if (snapshot.exists()) {
+          emailjs.send("service_iaotbjf", "template_82bvbdb", {
+            from_name: "Your App Name",
+            user_email: email,
+            message: "Click this link to reset your password"
+          }).then(response => {
+            alert("Password reset email sent!");
+          }).catch(error => {
+            console.error("EmailJS Error:", error);
+            alert("Failed to send email.");
+          });
+        } else {
+          alert("No account found with this email.");
+        }
+      })
+      .catch(error => {
+        console.error("Firebase Error:", error);
+        alert("Error checking email in database.");
+      });
+  });
+};
+</script>-->
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // 🔹 Firebase configuration
+  const firebaseConfig = {
+   apiKey: "AIzaSyBT3IH3TamNFw0WKeL-F3VotogL7on8f-Q",
+    authDomain: "foodi-uni.firebaseapp.com",
+      databaseURL: "https://foodi-uni-default-rtdb.firebaseio.com", // Your DB URL
+    projectId: "foodi-uni",
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+  // Hardcoded email to check
+  const emailToCheck = "ahmedalsofi@hotm";
+
+  document.getElementById("cheutton").addEventListener("click", function () {
+
+    database.ref("users")
+      .orderByChild("email")
+      .equalTo(emailToCheck)
+      .once("value")
+      .then(function(snapshot) {
+
+        console.log("Snapshot:", snapshot.val()); // DEBUG
+
+        if (snapshot.exists()) {
+          alert("Email exists in database!");
+        } else {
+          alert("Email NOT found.");
+        }
+
+      })
+      .catch(function(error) {
+        console.error("Database error:", error);
+        alert("Error checking email.");
+      });
+
+  });
+
+});
+</script>
+
+</body>
+</html>

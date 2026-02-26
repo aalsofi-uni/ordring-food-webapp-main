@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="../Css-files/navbar.css">
     <link rel="stylesheet" href="../Css-files/footer.css">
     <link rel="shortcut icon" href="/Images/favicon/Foodie_Favicon.png" type="image/x-icon">
-    <style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+ 
+ <style>
 
 .circle {
       position: absolute;
@@ -95,6 +97,7 @@
             background-color: #e21f1f;
             z-index: 9999;
         }
+        #map { height: 1000px; width: 100%; }
     </style>
 </head>
 <body>
@@ -367,7 +370,7 @@
         </svg>
     </button>
 
-    <script>
+  <!--  <script>
       
         function initMap() {
     const defaultLocation = { lat: 40.7128, lng: -74.0060 }; // Default to New York City
@@ -418,7 +421,56 @@
 }
 
         document.getElementById("copyright-year").textContent = new Date().getFullYear();
-    </script>
+    </script>-->
+  
+    
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Initialize map centered on starting point
+    const map = L.map('map').setView([37.7749, -122.4194], 13);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // Destination marker (customer)
+    const destination = L.marker([37.7849, -122.4094]).addTo(map)
+      .bindPopup('Delivery Destination')
+      .openPopup();
+
+    // Order/Driver marker
+    const orderMarker = L.marker([37.7749, -122.4194], {icon: L.icon({iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png', iconSize: [40, 40]})})
+      .addTo(map)
+      .bindPopup('Order in transit')
+      .openPopup();
+
+    // Simulate order movement toward destination
+    let lat = 37.7749;
+    let lng = -122.4194;
+
+    function moveOrder() {
+      const destLat = 37.7849;
+      const destLng = -122.4094;
+
+      // Simple step toward destination
+      lat += (destLat - lat) * 0.02;
+      lng += (destLng - lng) * 0.02;
+
+      orderMarker.setLatLng([lat, lng]);
+      map.panTo([lat, lng]);
+
+      // Stop when close to destination
+      if (Math.abs(lat - destLat) < 0.0001 && Math.abs(lng - destLng) < 0.0001) {
+        orderMarker.bindPopup("Order Delivered!").openPopup();
+        clearInterval(tracking);
+      }
+    }
+
+    const tracking = setInterval(moveOrder, 1000); // update every second
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
     <script src="top.js"></script>

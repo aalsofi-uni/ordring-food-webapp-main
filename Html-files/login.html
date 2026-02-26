@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
-	<link rel="shortcut icon" href="https://pnghq.com/wp-content/uploads/foodie-logo-png-clear-background-768x275.png" type="image/x-icon">
+	<!--<link rel="shortcut icon" href="https://pnghq.com/wp-content/uploads/foodie-logo-png-clear-background-768x275.png" type="image/x-icon">-->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
@@ -162,17 +164,17 @@
 			</div>
 			<div class="collapse navbar-collapse hamburgeritems enddiv order-3 ">
 				<ul class="navbar-nav end-links">
-					<li class="nav-item">
+					<!--<li class="nav-item">
 						<a class="nav-link active" href="../Html-files/login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-					</li>
+					</li>-->
 					<li class="nav-item">
 						<a class="nav-link" href="../Html-files/signup.html"><i class="fa-solid fa-user"></i> Sign-Up</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../Html-files/cart.html">
+					<!--	<a class="nav-link" href="../Html-files/cart.html">
 							Cart
 							<i class="fa-solid fa-cart-shopping"></i>
-						</a>
+						</a>-->
 					</li>
 				</ul>
 			</div>
@@ -201,10 +203,10 @@
 								<label for="login-email">Email</label>
 								<input type="email" name="email" id="login-email" placeholder="Enter Email" required>
 							</div>
-							<div class="textfield">
+						<!--	<div class="textfield">
 								<label for="login-username">Username</label>
 								<input type="text" name="Username" id="login-username" placeholder="Username">
-							</div>
+							</div>-->
 							<div class="textfield">
 								<label for="login-password">Password</label>
 								<input type="password" id="login-password" name="login-password" placeholder="Enter Password" required>
@@ -217,7 +219,7 @@
 							<div class="row justify-content-between">
 								<div>
 									</div>
-												<label  id="loginMessage" style="display:block; margin-top:10px; color:black">Error MSG</label>
+												<label  id="loginMessage" style="display:block; margin-top:10px; color:black"></label>
 								<div class="col">
 									<div class="form-check">
 										
@@ -240,7 +242,7 @@
 								<button id="loginbtn" class="btn-login"  type="button">Login</button>
 							
 								<h3 class="text-center"> OR </h3>
-								<button id="google-login" class="btn-login" type="submit">Login with Google</button>
+								<button id="google-login" class="btn-login" type="bmitbmit">Login with Google</button>
 							</div>
 							<h1 class="text-center">Don't have an account?
 								<a href="signup.html">Signup</a>
@@ -266,7 +268,7 @@
 						</div>
 					</div>
 					<div class="text-center">
-						<button class="btn-login pwdforget-submit-btn" type="submit">Submit</button>
+						<button id="submit" class="btn-login pwdforget-submit-btn" type="submit">Submit</button>
 					</div>
 				
 			</div>
@@ -408,12 +410,12 @@
 		});
 
 		// Password visibility toggle
-		const passwordInput = document.getElementById("password");
+		const passwordInput = document.getElementById("login-password");
 		const hideLogo = document.getElementById("login-hide");
 		hideLogo.addEventListener("click", function () {
 			const passwordField = this.querySelector("i");
 			if (passwordInput.getAttribute("type") == "text") {
-				passwordInput.setAttribute("type", "password");
+				passwordInput.setAttribute("type", "login-password");
 				passwordField.classList.replace("bxs-show", "bxs-hide");
 			} else {
 				passwordInput.setAttribute("type", "text");
@@ -422,9 +424,9 @@
 		});
 
 		function validateLogin() {
-			const email = document.getElementById("email").value;
-			const username = document.getElementById("username").value;
-			const password = document.getElementById("password").value;
+			const email = document.getElementById("login-email").value;
+			const username = document.getElementById("login-username").value;
+			const password = document.getElementById("login-password").value;
 
 			if (email === "") {
 				alert("Please Enter Email");
@@ -731,34 +733,37 @@ storageBucket: "foodi-uni.appspot.com",
     document.getElementById("loginbtn").addEventListener("click", async () => {
       const email = document.getElementById("login-email").value;
       const password = document.getElementById("login-password").value;
-      const username = document.getElementById("login-username").value;
-
+	//  const username = document.getElementById("login-username").value;
+     
       // Clear old message
       loginMessage.textContent = "";
       loginMessage.style.color = "red";
 
       try {
         await signInWithEmailAndPassword(auth, email, password);
-     sessionStorage.setItem("loggedInUser", username);
+		
+
+// Save login info
+       localStorage.setItem("loggedInUser", email);
+      //  sessionStorage.setItem("loggedInUser", username);
         // ✅ Success
         loginMessage.style.color = "green";
         loginMessage.textContent = "Login successful! Redirecting...";
 
         // Save username in session BEFORE redirect
        
-
         setTimeout(() => {
           window.location.href = "index.html";
         }, 1000);
 
-      } catch (error) {
-        // ❌ Error
+      } catch (error) { 
+        //  Error
         loginMessage.style.color = "red";
 
         if (error.code === "auth/invalid-credential") {
           loginMessage.textContent = "Invalid email or password.";
-        } else if (error.code === "auth/user-not-found") {
-          loginMessage.textContent = "No account found with this email.";
+     
+       //   loginMessage.textContent = "No account found with this email.";
         } else if (error.code === "auth/wrong-password") {
           loginMessage.textContent = "Incorrect password.";
         } else {
@@ -770,9 +775,6 @@ storageBucket: "foodi-uni.appspot.com",
     });
   });
 </script>
-
-
-
 
 </body>
 

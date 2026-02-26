@@ -24,7 +24,7 @@ googleLogin.addEventListener("click", function(){
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const user = result.user;
       console.log(user);
-      window.location.href = "../index.html";
+      window.location.href = "index.html";
   }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -49,7 +49,7 @@ if (user) {
   logoutLink.addEventListener('click', (e) => {
     e.preventDefault();
     signOut(auth).then(() => {
-      window.location.href = "../index.html"; 
+      window.location.href = "index.html"; 
     });
   });
   
@@ -60,7 +60,7 @@ if (user) {
   
 } else {
   // User is not logged in
-  if (loginLink) loginLink.style.display = './login.html'; // Show Login link
-  if (signUpLink) signUpLink.style.display = './sign-up.html'; // Show Sign-Up link
+  if (loginLink) loginLink.style.display = 'login.html'; // Show Login link
+  if (signUpLink) signUpLink.style.display = 'sign-up.html'; // Show Sign-Up link
 }
 });
