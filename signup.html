@@ -136,8 +136,8 @@
         <div class="circle"></div>
         <div class="circle"></div>
       </div>
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
+     <!-- <script>
+       document.addEventListener("DOMContentLoaded", function () {
           const coords = { x: 0, y: 0 };
           const circles = document.querySelectorAll(".circle");
     
@@ -173,7 +173,7 @@
     
           animateCircles();
         });
-      </script>
+      </script>-->
 
 	    <!-- Progress bar -->
 		<div id="progressBar"></div>
@@ -188,7 +188,7 @@
 		<!-- end -->
 	<nav class="navbar navbar-expand-lg fixed-top">
 		<div class="container-fluid">
-			<a href="../index.html" class="navbar-brand opacity-75 flex-fill">
+			<a href="index.html" class="navbar-brand opacity-75 flex-fill">
 				<img src="../Images/logo/Foodielogo.png" height="40">
 			</a>
 			<button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse"
@@ -199,13 +199,13 @@
 			<div class="collapse navbar-collapse hamburgeritems centerdiv order-2 order-lg-0">
 				<ul class="navbar-nav center-links">
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+						<a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../Html-files/menu.html"><i class="fa-solid fa-bars"></i> Menu</a>
+						<a class="nav-link" href="menu.html"><i class="fa-solid fa-bars"></i> Menu</a>
 					</li>
 					<li class="nav-item dropdown">
-                        <a class="nav-link services" href="../Html-files/services.html" aria-expanded="false"><i class="fa-solid fa-gear"></i> Services</a>
+                        <a class="nav-link services" href="services.html" aria-expanded="false"><i class="fa-solid fa-gear"></i> Services</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Ordering options</a></li>
                             <li><a class="dropdown-item" href="#">Order Tracking</a></li>
@@ -214,10 +214,10 @@
                         </ul>
                     </li>
 					<li class="nav-item">
-						<a class="nav-link" href="../Html-files/contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
+						<a class="nav-link" href="contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../Html-files/offers.html"><i class="fa-solid fa-tag"></i> Offers</a>
+						<a class="nav-link" href="offers.html"><i class="fa-solid fa-tag"></i> Offers</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="RateUs.html">
@@ -232,13 +232,13 @@
 			<div class="collapse navbar-collapse hamburgeritems enddiv order-3 ">
 				<ul class="navbar-nav end-links">
 					<li class="nav-item">
-						<a class="nav-link" href="../Html-files/login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+						<a class="nav-link" href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="../Html-files/signup.html"><i class="fa-solid fa-user"></i> Sign-Up</a>
+						<a class="nav-link active" href="signup.html"><i class="fa-solid fa-user"></i> Sign-Up</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../Html-files/cart.html">
+						<a class="nav-link" href="cart.html">
 							Cart
 							<i class="fa-solid fa-cart-shopping"></i>
 						</a>
@@ -262,6 +262,7 @@
 			</div>
 			<div class="col-lg-6 right-login" data-aos="zoom-out-right" data-aos-duration="1000" data-aos-offset="170"
 				data-aos-easing="ease-in-out">
+				<form id="signupForm">
 				<div class="card text-center mx-auto">
 					
 						<div class="card-body">
@@ -281,7 +282,7 @@
 							</div>
 							<div class="textfield">
 								<label for="signup-password">Password</label>
-								<input type="password" id="signup-password" name="password" placeholder="Enter Password" >
+								<input type="password" id="signup-password" name="password" placeholder="Enter Password" required>
         						<span id="signup-hide">
             					<i class='hide-icon bx bxs-hide'></i>
 						        </span>
@@ -307,19 +308,19 @@
 						<h5 class="mb-3">See Also</h5>
 						<ul class="nav flex-column">
 							<li class="nav-item">
-								<a class="nav-link" href="../index.html">Home</a>
+								<a class="nav-link" href="index.html">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="../Html-files/menu.html">Menu</a>
+								<a class="nav-link" href="menu.html">Menu</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="../Html-files/services.html">Services</a>
+								<a class="nav-link" href="services.html">Services</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="../Html-files/contact.html">Contact us</a>
+								<a class="nav-link" href="contact.html">Contact us</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="../Html-files/cart.html">Cart</a>
+								<a class="nav-link" href="cart.html">Cart</a>
 							</li>
 						</ul>
 					</div>
@@ -424,20 +425,7 @@
 			easing: 'ease',
 			once: false,
 		});
-	</script>
-	//<script>
-		// Your web app's Firebase configuration
-
-		// const firebaseConfig = {
-		// 	//Add your Config File
-		// };
-
-		// // Initialize Firebase
-		// firebase.initializeApp(firebaseConfig);
-		// const auth = firebase.auth();
-		// const db = firebase.database();
-
-	//</script>
+	
 	<!--<script>
 		// Toggle password visibility
 		const pswinput = document.getElementById('password');
@@ -537,77 +525,45 @@
 		 });
 	 </script>
 
-	<!--<script type="module">
 
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  document.getElementById('insertbtn').addEventListener('click', async () => {
-    
-      const name = document.getElementById('signup-name').value;
-      const email = document.getElementById('signup-email').value;
-      const username = document.getElementById('signup-username').value;
-	  const password = document.getElementById('signup-password').value;
-try {
-      // 1️⃣ Create user in Firebase Auth (password stored securely)
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      // 2️⃣ Save extra user data in Firestore (NO PASSWORD!)
-      await setDoc(doc(db, "users", user.uid), {
-        email: email,
-        username: username,
-        mobile: mobile,
-        createdAt: new Date()
-      });
-      await setDoc(doc(db, "subscriptions", username), {
-        name,
-        email,
-        username,
-        createdAt: serverTimestamp()
-      });
-
-      alert("Firestore insert SUCCESS!");
-
-    } catch (err) {
-      console.error("Firestore error:", err);
-      alert("Firestore error: " + err.message);
-    }
-  });
-</script>
--->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
   import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
   import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
   const firebaseConfig = {
- apiKey: "AIzaSyBT3IH3TamNFw0WKeL-F3VotogL7on8f-Q",
-  authDomain: "foodi-uni.firebaseapp.com",
-  databaseURL: "https://foodi-uni-default-rtdb.firebaseio.com",
-  projectId: "foodi-uni",
-  storageBucket: "foodi-uni.firebasestorage.app",
-  messagingSenderId: "488970239781",
-  appId: "1:488970239781:web:b3a9d5f600243d875ba4cc",
+    apiKey: "AIzaSyBT3IH3TamNFw0WKeL-F3VotogL7on8f-Q",
+    authDomain: "foodi-uni.firebaseapp.com",
+    projectId: "foodi-uni",
+    storageBucket: "foodi-uni.firebasestorage.app",
+    messagingSenderId: "488970239781",
+    appId: "1:488970239781:web:b3a9d5f600243d875ba4cc",
   };
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const db = getFirestore(app);
 
-  document.getElementById("insertbtn").addEventListener("click", async () => {
+  document.getElementById("signupForm").addEventListener("submit", async (e) => {
+  e.preventDefault(); // stop page reload
+
     const name = document.getElementById("signup-name").value;
     const email = document.getElementById("signup-email").value;
     const username = document.getElementById("signup-username").value;
     const password = document.getElementById("signup-password").value;
 
+    //  Password Complexity
+    const strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+    if (!strongPassword.test(password)) {
+      alert("Password must be at least 8 characters long and contains:\n* Uppercase letter\n* Lowercase letter\n* Number\n* Special character");
+      return; // stop execution
+    }
+
     try {
-      // 1️⃣ Create user in Firebase Auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // 2️⃣ Save extra profile info (NO PASSWORD!)
       await setDoc(doc(db, "users", username), {
         name: name,
         email: email,
@@ -623,7 +579,6 @@ try {
     }
   });
 </script>
-
 
 
 
