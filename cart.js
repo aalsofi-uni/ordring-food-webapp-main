@@ -122,7 +122,7 @@ function handleEmptyCart(total) {
             <p>Looks like you haven't made your choice yet... Check what we have got for you and get it swished.</p>
             <a href="./menu.html"><button class="butt">Explore Menu</button></a>`;
         alert("To place Order,Kindly add items to the cart");
-        stopPropagation();
+        event.stopPropagation();
         return(true); // Cart is empty
     }
 }

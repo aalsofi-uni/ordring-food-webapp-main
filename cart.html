@@ -594,19 +594,19 @@
                     <h5 class="mb-3">See Also</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="Index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Html-files/menu.html">Menu</a>
+                            <a class="nav-link" href="menu.html">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Html-files/services.html">Services</a>
+                            <a class="nav-link" href="services.html">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Html-files/contact.html">Contact us</a>
+                            <a class="nav-link" href="contact.html">Contact us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Html-files/cart.html">Cart</a>
+                            <a class="nav-link" href="cart.html">Cart</a>
                         </li>
                     </ul>
                 </div>
@@ -702,7 +702,7 @@
              <div >
                     Give your valuable 
                             <Link to="" >
-                                <a  href="/Html-files/feedback.html"><b>feedback!</b></a>
+                                <a  href="feedback.html"><b>feedback!</b></a>
                             </Link>
                     </div>
         </div>
@@ -711,11 +711,11 @@
             <span id="copyright-year"></span> Foodies - All Rights Reserved |
             <span id="terms"></span>
             <Link to="" >
-                <a href="/Html-files/terms.html" class="legal-pages">Terms and Conditions</a> |
+                <a href="terms.html" class="legal-pages">Terms and Conditions</a> |
             </Link>
             <span id="privacy"></span>
             <Link to="" >
-                <a href="/Html-files/privacy.html" class="legal-pages">Privacy Policy</a> |
+                <a href="privacy.html" class="legal-pages">Privacy Policy</a> |
             </Link>
             <span id="author">
                 <a href="https://www.linkedin.com/in/khushi-joshi-95a587256/" target="_blank" class="legal-pages">Khushi Joshi</a>
@@ -877,7 +877,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<script>
+<!--<script>
   // Initialize EmailJS
   emailjs.init("npcEIBGLCvNUKmJ-Y");
 
@@ -940,6 +940,126 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "login.html"; // redirect if not logged in
     }
   });
+</script>-->
+
+  
+  
+
+
+<!-- Firebase Scripts -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig1 = {
+    apiKey: "AIzaSyBT3IH3TamNFw0WKeL-F3VotogL7on8f-Q",
+    authDomain: "foodi-uni.firebaseapp.com",
+    projectId: "foodi-uni"
+  };
+
+  firebase.initializeApp(firebaseConfig1);
+
+  
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ✅ Init EmailJS
+  emailjs.init("npcEIBGLCvNUKmJ-Y");
+
+  // ✅ Init Firestore
+  const db = firebase.firestore();
+
+  function generateOrderNumber() {
+    return "ORD-" + Math.floor(100000 + Math.random() * 900000);
+  }
+
+  const orderBtn = document.getElementById("ordernowbutton");
+
+  if (!orderBtn) {
+    console.log("Order button not found");
+    return;
+  }
+
+  orderBtn.addEventListener("click", async function () {
+
+    console.log("Order button clicked");
+
+    const user = firebase.auth().currentUser;
+
+    if (!user) {
+      alert("Please login first.");
+      return;
+    }
+
+    const cartItems = document.querySelectorAll(".cart-item");
+
+    if (cartItems.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    const orderNumber = generateOrderNumber();
+    const items = [];
+    let totalAmount = 0;
+
+    cartItems.forEach(item => {
+
+      const name = item.dataset.productName || "Unknown Item";
+      const price = parseFloat(item.dataset.productPrice) || 0;
+      const quantity = parseInt(
+        item.querySelector(".quantity")?.innerText || 0
+      );
+
+      totalAmount += price * quantity;
+
+      items.push({
+        name: name,
+        price: price,
+        quantity: quantity
+      });
+
+    });
+
+    console.log("Items to save:", items);
+
+    try {
+
+      // ✅ Save to Firestore
+      await db.collection("orders").add({
+        orderNumber: orderNumber,
+        userUID: user.uid,
+        userEmail: user.email,
+        items: items,
+        totalAmount: totalAmount,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      console.log("Order saved to Firestore");
+
+      //  Send EmailJS confirmation
+      await emailjs.send(
+        "service_iaotbjf",
+        "template_82bvbdb",
+        {
+          order_number: orderNumber,
+          to_email: user.email
+        }
+      );
+
+      console.log("Email sent");
+
+      alert("Order placed successfully!\nOrder ID: " + orderNumber);
+
+    } catch (error) {
+      console.error("Order failed:", error);
+      alert("Something went wrong. Check console.");
+    }
+
+  });
+
+});
 </script>
 
 <!--
