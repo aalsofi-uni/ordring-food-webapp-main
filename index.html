@@ -112,8 +112,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 48%;
-    height: 48%;
+    width: 100%;
+    height: 100%;
     background: #f6f5f5; 
     display: flex;
     justify-content: center;
@@ -142,6 +142,29 @@
   transform: translate(-50%, -50%);
     }*/
 
+/* Tablet + Mobile */
+@media (max-width: 768px) {
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #333;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+}
     .circle-container {
       position: fixed;
       top: 0;
@@ -156,6 +179,15 @@
       .circle-container{
         display: none;
       }
+    }
+
+    .mobile-menu{
+background-color: white;
+
+    }
+    .navbar-collapse{
+background-color:white;
+
     }
     </style>
 </head>
@@ -282,95 +314,103 @@
         <div class="rope"></div>
         <img id="caduceus" src="Images/image.png" alt="Caduceus">
       </div> -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <!-- Brand ino -->
-
-            
-            <a href="index.html">
-                <img id="theme-toggle-logo" 
+   
+      
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a href="index.html" class="navbar-brand opacity-75 flex-fill">
+            <img id="theme-toggle-logo" 
                 style="height: 50px; width: 50px;"
                 src="Images/logo/Logo-Light.png"  alt="Brand Logo">
-            </a>
+        </a>
+        <button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse"
+            data-bs-target=".hamburgeritems" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse hamburgeritems centerdiv order-2 order-lg-0">
+            <ul class="navbar-nav center-links">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">
+                        <i class="fa-solid fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">
+                        <i class="fa-solid fa-book-open"></i> Menu
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
 
-            <!-- Centered Navbar Links -->
-            <div 
-            style=" margin-left: 20vw;"
-            class="collapse navbar-collapse hamburgeritems centerdiv order-2 order-lg-0">
-                <ul class="navbar-nav center-links">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html" style="color: black;">
+                  <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-gear"></i> Services
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Ordering options</a></li>
+                      <li><a class="dropdown-item" href="#">Order Tracking</a></li>
+                      <li><a class="dropdown-item" href="#">Customer Support</a></li>
+                      <li><a class="dropdown-item" href="#">FAQS</a></li>
+                  </ul>
+              </li>
 
-
-                            <i class="fa-solid fa-house"></i> Home
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.html" style="color: black;">
-
-                            <i class="fa-solid fa-bars"></i> Our Menu
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-
-                        <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                            <i class="fa-solid fa-gear"></i> Services
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-check" ></i> Ordering options</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-truck"></i> Order Tracking</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-headset"></i> Customer Support</a></li>
-                            <li><a class="dropdown-item" href="#FAQ"><i class="fa-solid fa-question"></i> FAQS</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- <li class="nav-item, nav-items">
-                        <a class="nav-link" href="Html-files/contact.html"><i class="fa-solid fa-phone"></i>Contact Us</a>
-
-                        
-
-                    </li> -->
-
-                   
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="contact.html" style="color: black;">
-                            <i class="fa-solid fa-phone"></i> Contact Us 
-                        </a>
-                    </li>
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="#" style="color: black;">
-                            <i class="fa-solid fa-question"></i> FAQ 
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="offers.html" style="color: black;">
-
-                            <i class="fa-solid fa-tag"></i> Offers
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fa-solid fa-envelope"></i> Contact Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="offers.html">
+                        <i class="fa-solid fa-gift"></i> Offers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RateUs.html">
+                        <i class="fa-solid fa-star"></i> Rate Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="order-0 ml-auto p-2">
+         <!--   <img class="nav-link" src="Images/navbar/sun2.png" id="theme-toggle-icon" alt="theme toggler button">-->
+        </div>
+ <div id="auth-section">
+                    <li   class="nav-item">
+                        <a class="nav-link" href="login.html" style="color: black;">
+                            <i class="fa-solid fa-sign-in"></i> Login
 
                         </a>
                     </li>
+                </div>
+                
+<div id="user-section" style="display:none">
+  <!--Welcome, <span id="Username"></span>!-->
+     <a id="logout-Btn" class="nav-link" href="login.html" style="color: black;">
+ <i class="fa-solid fa-sign-in"></i> Logout
+     </a>
+</div>
+  <li class="nav-item">
+                    <a class="nav-link" href="cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i> <span class="cart-subscript">0</span>Cart
+                    </a>
+                </li>
+        <!--  <img class="nav-link" src="Images/navbar/sun.png" id="theme-toggle-icon" alt="theme toggler button">-->
+      </div>
+      
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="RateUs.html" style="color: black;">
-                            <i class="fa-solid fa-star"></i> Rate Us
-                        </a>
-                    </li>
-                    
-                    
+      
 
-                </ul>
-            </div>
+              
+            </ul>
+        </div>
+    </div>
+</nav>
             
             <span class="slider" style="width: 40px; height: 20px; display: none;"></span> 
 
                         
             <!-- Navbar Toggler -->
     
-            <div class="mobile-menu ">
+            <div class="mobile-menu">
                 <div class="mobile-menu__trigger"><span></span></div>
                 <a class="page-scroll" href="index.html">
                     <i class="fa-solid fa-house"></i> 
@@ -400,9 +440,7 @@
                 <a class="page-scroll" href="signup.html">
                     <i class="fa-solid fa-user"></i> Sign-Up
                 </a>
-                <a class="page-scroll" href="cart.html">
-                    Cart <i class="fa-solid fa-cart-shopping"></i>
-                </a>
+                
             </div>
 
             <!-- End Navbar Links -->
@@ -411,54 +449,19 @@
             <div class="collapse navbar-collapse hamburgeritems enddiv order-3">
                 <ul class="navbar-nav end-links">
 
-                    
-                <div id="auth-section">
-                    <li   class="nav-item">
-                        <a class="nav-link" href="login.html" style="color: black;">
-
-                            
-
-                            <i class="fa-solid fa-sign-in"></i> Login
-
-                        </a>
-                    </li>
-        
-                  <!----  <li class="nav-item">
-                        <a class="nav-link" href="signup.html" style="color: black;">
-
-                            <i class="fa-solid fa-user"></i> Sign-Up
-
-                            
-
-                        </a>
-                    </li>-->
-                </div>
-
-<div id="user-section" style="display:none">
-  <!--Welcome, <span id="Username"></span>!-->
-  
-     <a id="logout-Btn"  href="login.html" class="nav-link" style="color: black;cursor: pointer;">
- <i class="fa-solid fa-sign-in"></i> Logout
-     </a>
-</div>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html" style="color: black;">
-
-                            Cart <i class="fa-solid fa-cart-shopping"></i>
-
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
         <!-- Theme Toggle Icon -->
-        <div id="sun-moon-mode-toggler" class="toggle-container" >
-            <input type="checkbox" id="themeToggle" class="switch-checkbox" onclick="toggleTheme()">
+       <div id="sun-moon-mode-toggler" class="toggle-container" >
+           <!----   <input type="checkbox" id="themeToggle" class="switch-checkbox" onclick="toggleTheme()">
             <label  id="themeChangeToggle" class="theme-switch" for="themeToggle">
-            <div class="toggle-button">
+        <div class="toggle-button">-->
+            
             </div>
-            </label>
+            
           </div>
+          
     </nav>
 
 
@@ -487,7 +490,7 @@
                     <p class="slider-text slider-reveal">
                         come with family & feel the joy of mouthwatering food
                     </p>
-                    <a href="./menu.html" class="btn btn-danger slider-button slider-reveal mx-auto" role="button">
+                    <a href="menu.html" class="btn btn-danger slider-button slider-reveal mx-auto" role="button">
                         <span class="text text-1">VIEW OUR MENU</span>
                     </a>
                 </div>
@@ -521,7 +524,7 @@
                     <p class="slider-text slider-reveal">
                         come with family & feel the joy of mouthwatering food
                     </p>
-                    <a href="Html-files/menu.html" class="btn btn-danger slider-button slider-reveal mx-auto" role="button">
+                    <a href="menu.html" class="btn btn-danger slider-button slider-reveal mx-auto" role="button">
                         VIEW OUR MENU
                     </a>
                 </div>
@@ -885,24 +888,24 @@
             </script>
                 <div class="box my-auto col-md-4 col-xl-3" data-aos="zoom-out-left" data-aos-duration="1000"
                     data-aos-offset="170" data-aos-easing="ease-in-out">
-                    <img src="../icons/motorbike.png" alt="" class="service-icon">
+                    <img src="icons/motorbike.png" alt="" class="service-icon">
                     <h1>Online <br>Delivery</h1>
-                    <a href="/Html-files/add-address.html" class="btn btn-outline-light border border-light">Order Online</a>
+                    <a href="add-address.html" class="btn btn-outline-light border border-light">Order Online</a>
             </div>
                 <div class="box my-auto col-md-4 col-xl-3" data-aos="zoom-out-left" data-aos-duration="1000"
                     data-aos-offset="170" data-aos-easing="ease-in-out">
-                    <img src="../icons/take-away.png" alt="" class="service-icon">
+                    <img src="icons/take-away.png" alt="" class="service-icon">
 
                     <h1>Click & <br>Collect</h1>
-                    <a href="../Html-files/cart.html" class="btn btn-outline-light border border-light">Take out Order</a>
+                    <a href="cart.html" class="btn btn-outline-light border border-light">Take out Order</a>
                 </div>
 
                 <div class="box my-auto col-md-4 col-xl-3" data-aos="zoom-out-left" data-aos-duration="1000"
                     data-aos-offset="170" data-aos-easing="ease-in-out">
-                    <img src="../icons/dining-table.png" alt="" class="service-icon">
+                    <img src="icons/dining-table.png" alt="" class="service-icon">
 
                     <h1>Restaurant<br> Dining</h1>
-                    <a href="../Html-files/book-table.html" class="btn btn-outline-light border border-light">Book Table </a>
+                    <a href="book-table.html" class="btn btn-outline-light border border-light">Book Table </a>
                 </div>
             </div>
         </div>
@@ -912,7 +915,7 @@
         <div class="mainhead text-center" data-aos="zoom-out-up" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
             <h1>"Get ready to explore our delicious range of dishes!"</h1>
             <p>"Welcome to a world of culinary delights where every bite tells a flavorful story. Explore our diverse menu and savor the essence of exquisite dining." </p>
-            <a class="btn btn-danger" href="Html-files/menu.html">View Menu</a>
+            <a class="btn btn-danger" href="menu.html">View Menu</a>
         </div>
 
         <div class="menu_items row container-fluid g-3 p-5 mx-auto" data-aos="zoom-out-up" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
@@ -924,7 +927,7 @@
                     <div class="card-body">
                         <h3>Indian Thali</h3>
                         <p>Enjoy a thali full of traditional flavours and memories</p>
-                        <a href="Html-files/menu.html"><button class="ordernow">Order Now</button></a>
+                        <a href="menu.html"><button class="ordernow">Order Now</button></a>
                     </div>
                 </div>
             </div>
@@ -936,7 +939,7 @@
                     <div class="card-body">
                         <h3>Dessert</h3>
                         <p>Complete your meal with mouth watering delicacies</p>
-                        <a href="Html-files/menu.html"><button class="ordernow">Order Now</button></a>
+                        <a href="menu.html"><button class="ordernow">Order Now</button></a>
                     </div>
                 </div>
             </div>
@@ -948,7 +951,7 @@
                     <div class="card-body">
                         <h3>Snacks</h3>
                         <p>Have a lighter version with deliciouis flavours</p>
-                        <a href="Html-files/menu.html"><button class="ordernow">Order Now</button></a>
+                        <a href="menu.html"><button class="ordernow">Order Now</button></a>
                     </div>
                 </div>
             </div>
@@ -960,7 +963,7 @@
                     <div class="card-body">
                         <h3>Juices</h3>
                         <p>Boost yourself up with fruit extracts and freshen up</p>
-                        <a href="Html-files/menu.html"><button class="ordernow">Order Now</button></a>
+                        <a href="menu.html"><button class="ordernow">Order Now</button></a>
                     </div>
                 </div>
             </div>
@@ -1139,7 +1142,7 @@
         <p class="best_discount">For best discounts and free delivery download the app now from your Google Play Store or App Store.</p>
       
 
-        <a href="#" class="app_store"><img src="../Images/app_download/download-on-the-app-store.png" class="app-download-img" alt="Download on the Apple App Store"></a>
+        <a href="#" class="app_store"><img src="Images/app_download/download-on-the-app-store.png" class="app-download-img" alt="Download on the Apple App Store"></a>
     </div>
 
     <footer>
@@ -1153,19 +1156,19 @@
                                 <a class="nav-link" href="#">Home</a>
                             </li>
                             <li class="nav-item" style="margin-left: 90px;">
-                                <a class="nav-link" href="./Html-files/menu.html">Menu</a>
+                                <a class="nav-link" href="menu.html">Menu</a>
                             </li>
                             <li class="nav-item" style="margin-left: 90px;">
-                                <a class="nav-link" href="./Html-files/services.html">Services</a>
+                                <a class="nav-link" href="services.html">Services</a>
                             </li>
                             <li class="nav-item" style="margin-left: 90px;">
-                                <a class="nav-link" href="./Html-files/contact.html">Contact us</a>
+                                <a class="nav-link" href="contact.html">Contact us</a>
                             </li>
                             <li class="nav-item" style="margin-left: 90px;">
-                                <a class="nav-link" href="./Html-files/cart.html">Cart</a>
+                                <a class="nav-link" href="cart.html">Cart</a>
                             </li>
                             <li class="nav-item" style="margin-left: 90px;">
-                                <a class="nav-link" href="/Html-files/contributor.html">Our Contributors</a>
+                                <a class="nav-link" href="contributor.html">Our Contributors</a>
                             </li>
                         </ul>
                     </div>
@@ -1287,7 +1290,7 @@
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   
-  <script src=../Html-files/googletranslate.js></script>
+  <script src=googletranslate.js></script>
 
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

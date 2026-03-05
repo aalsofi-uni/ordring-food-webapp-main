@@ -46,6 +46,7 @@ function updateQuantity(button, change) {
     saveCartToLocalStorage();
 }
 
+
 function updateTotal() {
     const cartItems = document.querySelectorAll('.cart-item');
     let total = 0.0;
@@ -56,7 +57,15 @@ function updateTotal() {
         total += price * quantity;
     });
 
-    document.getElementById('cart-total').innerHTML = (total != 0) ? `<span>Subtotal:</span> $${total.toFixed(2)}` : ``;
+    let finalTotal = total - discountAmount;
+
+    document.getElementById('cart-total').innerHTML =
+        (total !== 0)
+        ? `<span>Subtotal:</span> £${total.toFixed(2)}<br>
+           ${discountAmount > 0 ? `<span>Discount (30%):</span> -£${discountAmount.toFixed(2)}<br>` : ``}
+           <strong>Total:</strong> £${finalTotal.toFixed(2)}`
+        : ``;
+
     handleEmptyCart(total);
 }
 
@@ -194,7 +203,7 @@ window.onclick = (event) => {
 document.addEventListener('DOMContentLoaded', function() {
     const donateButton = document.getElementById('donateBtn');
     donateButton.addEventListener('click', function() {
-        window.location.href = '../Html-files/donation-form.html';
+        window.location.href = 'donation-form.html';
     });
 });
 

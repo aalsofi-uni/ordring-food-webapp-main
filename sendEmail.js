@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
   debug: true        // optional: prints debug info
 });
 
-// 2️⃣ Define email options
+// 2️ Define email options
 const mailOptions = {
     from: "aconuni@gmail.com",
   to: "aalsofi@hotmail.com",        // replace with the email you want to send to
@@ -24,7 +24,7 @@ const mailOptions = {
   text: "Hello! This is a test email sent using Nodemailer and Node.js."
 };
 
-// 3️⃣ Send the email
+// 3️ Send the email
 transporter.sendMail(mailOptions, (err, info) => {
   if (err) {
     console.log("Error:", err);

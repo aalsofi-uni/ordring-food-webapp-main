@@ -194,8 +194,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 48%;
-    height: 48%;
+    width: 100%;
+    height: 100%;
     background: #f6f5f5; 
     display: flex;
     justify-content: center;
@@ -239,6 +239,11 @@
         display: none;
       }
     }
+    .navbar-collapse{
+background-color:white;
+
+    }
+    </style>
 
     </style>
   
@@ -281,7 +286,7 @@
         <div class="circle"></div>
         <div class="circle"></div>
       </div>
-      <script>
+     <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
           const coords = { x: 0, y: 0 };
           const circles = document.querySelectorAll(".circle");
@@ -318,7 +323,7 @@
     
           animateCircles();
         });
-      </script>
+      </script>-->
 
         <!-- Progress bar -->
         <div id="progressBar"></div>
@@ -336,71 +341,95 @@
     </div>
     <div class="head_container">
         <header>
+          
             <nav class="navbar navbar-expand-lg fixed-top">
-                <div class="container-fluid">
-                    <a href="../index.html" class="navbar-brand opacity-75 flex-fill">
-                        <img src="../Images/logo/Foodielogo.png" height="40">
+    <div class="container-fluid">
+        <a href="index.html" class="navbar-brand opacity-75 flex-fill">
+            <img id="theme-toggle-logo" 
+                style="height: 50px; width: 50px;"
+                src="Images/logo/Logo-Light.png"  alt="Brand Logo">
+        </a>
+        <button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse"
+            data-bs-target=".hamburgeritems" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse hamburgeritems centerdiv order-2 order-lg-0">
+            <ul class="navbar-nav center-links">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">
+                        <i class="fa-solid fa-home"></i> Home
                     </a>
-                    <button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse" data-bs-target=".hamburgeritems"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse hamburgeritems centerdiv order-2 order-lg-0">
-                        <ul class="navbar-nav center-links">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="menu.html"><i class="fa-solid fa-bars"></i> Menu</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link services" href="services.html" aria-expanded="false"><i class="fa-solid fa-gear"></i> Services</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Ordering options</a></li>
-                                    <li><a class="dropdown-item" href="#">Order Tracking</a></li>
-                                    <li><a class="dropdown-item" href="#">Customer Support</a></li>
-                                    <li><a class="dropdown-item" href="#">FAQS</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="offers.html"><i class="fa-solid fa-tag"></i> Offers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="RateUs.html">
-                                    <i class="fa-solid fa-star"></i> Rate Us
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="order-0 ml-auto p-2">
-                        <img class="nav-link" src="../Images/navbar/sun2.png" id="theme-toggle-icon" alt="theme toggler button">
-                    </div>
-                    <div class="collapse navbar-collapse hamburgeritems enddiv order-3 ">
-                        <ul class="navbar-nav end-links">
-                             <div id="auth-section">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">
+                        <i class="fa-solid fa-book-open"></i> Menu
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+
+                  <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-gear"></i> Services
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Ordering options</a></li>
+                      <li><a class="dropdown-item" href="#">Order Tracking</a></li>
+                      <li><a class="dropdown-item" href="#">Customer Support</a></li>
+                      <li><a class="dropdown-item" href="#">FAQS</a></li>
+                  </ul>
+              </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fa-solid fa-envelope"></i> Contact Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="offers.html">
+                        <i class="fa-solid fa-gift"></i> Offers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RateUs.html">
+                        <i class="fa-solid fa-star"></i> Rate Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="order-0 ml-auto p-2">
+         <!--   <img class="nav-link" src="Images/navbar/sun2.png" id="theme-toggle-icon" alt="theme toggler button">-->
+        </div>
+ <div id="auth-section">
                     <li   class="nav-item">
                         <a class="nav-link" href="login.html" style="color: black;">
-
-                            
-
                             <i class="fa-solid fa-sign-in"></i> Login
 
                         </a>
                     </li>
-        
-                  <!----  <li class="nav-item">
-                        <a class="nav-link" href="signup.html" style="color: black;">
-
-                            <i class="fa-solid fa-user"></i> Sign-Up
-
-                            
-
-                        </a>
-                    </li>-->
                 </div>
+                
+<div id="user-section" style="display:none">
+  <!--Welcome, <span id="Username"></span>!-->
+     <a id="logout-Btn" class="nav-link" href="login.html" style="color: black;">
+ <i class="fa-solid fa-sign-in"></i> Logout
+     </a>
+</div>
+  <li class="nav-item">
+                    <a class="nav-link" href="cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i> <span class="cart-subscript">0</span>Cart
+                    </a>
+                </li>
+        <!--  <img class="nav-link" src="Images/navbar/sun.png" id="theme-toggle-icon" alt="theme toggler button">-->
+      </div>
+      
+
+      
+
+              
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <div id="user-section" style="display:none">
   <!--Welcome, <span id="Username"></span>!-->
@@ -411,7 +440,7 @@
      <p>Logged in as: <span id="userEmail"></span></p>
 </div>
                             <li class="nav-item">
-                                <a class="nav-link active" href="../Html-files/cart.html">
+                                <a class="nav-link active" href="cart.html">
                                     Cart
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </a>
@@ -491,24 +520,26 @@
                     </div>
                 <div class="mb-3">
                     <label for="nameOnCard" class="form-label">Name on Card</label>
-                    <input type="text" class="form-control shadow-sm" id="nameOnCard" placeholder="Name on Card">
+                    <input type="text" class="form-control shadow-sm" id="nameOnCard" placeholder="Name on Card" value="Joy Test">
                 </div>
                 <div class="mb-3">
-                    <label for="cardNumber" class="form-label">Card Number</label>
-                    <input type="text" class="form-control shadow-sm" id="cardNumber" placeholder="Card Number" maxlength="16">
+                    <label for="cardNumber"  class="form-label">Card Number</label>
+                    <input type="text" class="form-control shadow-sm" id="cardNumber" placeholder="Card Number" maxlength="16" value="2121 2121 2121 2121">
                 </div>
                 <div class="d-flex">
                     <div class="me-3 w-50">
-                        <label for="expirationDate" class="form-label">Expiration Date</label>
-                        <input type="text" class="form-control shadow-sm" id="expirationDate" placeholder="MM/YY">
+                        <label for="expirationDate"  class="form-label">Expiration Date</label>
+                        <input type="text" class="form-control shadow-sm" id="expiry" placeholder="MM/YY" value="12/30">
                     </div>
                     <div class="w-50">
-                        <label for="cvv" class="form-label">CVV</label>
-                        <input type="text" class="form-control shadow-sm" id="cvv" placeholder="CVV" maxlength="4">
+                        <label for="cvv" id="cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control shadow-sm" id="cvc" placeholder="CVC" maxlength="4" value="101">
                     </div>
                 </div>
-                <button class="btn btn-primary w-100 mt-3 shadow-sm checkout-btn" class="">Check Out</button>
-                    </div>
+               
+                <button id="paybtn" class="btn btn-primary w-100 mt-3 shadow-sm checkout-btn" class="">Check Out</button>
+             <label id="paymentMessage"></label>        
+            </div>
     </div>
 </div>
 
@@ -769,14 +800,14 @@
 </script>
         <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
         <script src="navbar.js"></script>
-        <script src="../carts.js"></script>
+        <script src="carts.js"></script>
         <script src="cart.js"></script>
         <script src="top.js"></script>
 
 
         <div id="preloader">
             <video autoplay muted loop id="preloader-video">
-                <source src="/preloader.mp4" type="video/mp4">
+                <source src="preloader.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -791,7 +822,7 @@
             setTimeout(function() {
                 preloader.style.display = 'none'; 
             }, 500); 
-        }, 3000); 
+        }, 1500); 
     });
     
         </script>
@@ -877,76 +908,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<!--<script>
-  // Initialize EmailJS
-  emailjs.init("npcEIBGLCvNUKmJ-Y");
-
-  // Generate order number
-  function generateOrderNumber() {
-    return "ORD-" + Math.floor(100000 + Math.random() * 900000);
-  }
-
-  document.getElementById("ordernowbutton").addEventListener("click", function () {
-
-    const cartContainer = document.getElementById("cart-items");
-
-    // 1️⃣ Check if cart is visible
-    if (!cartContainer || !cartContainer.offsetParent) {
-      alert("Cart is not visible! Please open your cart.");
-      return;
-    }
-
-    // 2️⃣ Check if cart has items
-    const cartItems = cartContainer.querySelectorAll(".cart-item");
-    if (cartItems.length === 0) {
-      alert("Your cart is empty! Please add items before ordering.");
-      return;
-    }
-
-    // 3️⃣ Get email from page
-    const userEmail = document.getElementById("userEmail").textContent.trim();
-    if (!userEmail) {
-      alert("No email found. Please login first.");
-      return;
-    }
-
-    // 4️⃣ Generate order number
-    const orderNumber = generateOrderNumber();
-
-    // 5️⃣ Send email
-    const templateParams = {
-      order_number: orderNumber,
-      to_email: userEmail
-    };
-
-    emailjs.send("service_iaotbjf", "template_82bvbdb", templateParams)
-      .then(() => {
-        alert("Order sent to " + userEmail + "\nOrder ID: " + orderNumber);
-      })
-      .catch(error => {
-        console.error("Email failed:", error);
-        alert("Failed to send email. Check console for errors.");
-      });
-
-  });
-
-  // Firebase auth listener
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      console.log("User detected:", user.email);
-      document.getElementById("userEmail").textContent = user.email;
-    } else {
-      console.log("No user logged in");
-      window.location.href = "login.html"; // redirect if not logged in
-    }
-  });
-</script>-->
 
   
   
 
 
-<!-- Firebase Scripts -->
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
@@ -965,10 +931,10 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ✅ Init EmailJS
+  // Init EmailJS
   emailjs.init("npcEIBGLCvNUKmJ-Y");
 
-  // ✅ Init Firestore
+  // Init Firestore
   const db = firebase.firestore();
 
   function generateOrderNumber() {
@@ -990,6 +956,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!user) {
       alert("Please login first.");
+      return;
+    }
+
+    // CHECK IF OPTION IS SELECTED
+    const checkoutType = document.getElementById("checkoutType").value;
+
+    if (checkoutType === "select") {
+      alert("Please choose Order Online or Takeout Order.");
       return;
     }
 
@@ -1026,11 +1000,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
 
-      // ✅ Save to Firestore
+      // Save order
       await db.collection("orders").add({
         orderNumber: orderNumber,
         userUID: user.uid,
         userEmail: user.email,
+        checkoutType: checkoutType,
         items: items,
         totalAmount: totalAmount,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
@@ -1038,76 +1013,112 @@ document.addEventListener("DOMContentLoaded", function () {
 
       console.log("Order saved to Firestore");
 
-      //  Send EmailJS confirmation
+      // Send email
       await emailjs.send(
         "service_iaotbjf",
         "template_82bvbdb",
         {
           order_number: orderNumber,
-          to_email: user.email
+          to_email: user.email,
+          checkout_type: checkoutType
         }
       );
 
       console.log("Email sent");
 
       alert("Order placed successfully!\nOrder ID: " + orderNumber);
+      // Clear cart
+localStorage.removeItem("cartItems");
+document.getElementById("cart-items").innerHTML = "";
+document.getElementById("cart-total").innerHTML = "";
+
+const counter = document.querySelector(".cart-subscript");
+if(counter){
+  counter.textContent = "0";
+}
+      // Redirect 
+      if (checkoutType === "orderOnline") {
+      window.location.href = "ordertracking.html?order=" + orderNumber;
+      } else {
+      window.location.href = "Index.html";
+     }
 
     } catch (error) {
       console.error("Order failed:", error);
-      alert("Something went wrong. Check console.");
+      alert("Something went wrong");
     }
 
   });
 
 });
 </script>
-
-<!--
 <script>
-  let loggedInUserEmail = "";
+    let couponApplied = false;
+let discountAmount = 0;
+document.getElementById("applyCouponButton").addEventListener("click", function(){
 
-  // Wait for Firebase auth
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      loggedInUserEmail = user.email;
-      console.log("User detected:", loggedInUserEmail);
+    const code = document.getElementById("inputCode").value.trim();
+
+    if(code === "qN6FVAn4"){
+
+        if(couponApplied){
+            alert("Coupon already applied!");
+            return;
+        }
+
+        const cartItems = document.querySelectorAll('.cart-item');
+        let total = 0;
+
+        cartItems.forEach(item => {
+            const price = parseFloat(item.getAttribute('data-product-price'));
+            const quantity = parseInt(item.querySelector('.quantity').textContent);
+            total += price * quantity;
+        });
+
+        discountAmount = total * 0.30; // 30% discount
+        couponApplied = true;
+
+        alert("Coupon applied! You got 30% off.");
+        updateTotal();
+
     } else {
-      alert("Please login first");
-      window.location.href = "login.html";
-    }
-  });
-
-  function generateOrderNumber() {
-    return "ORD-" + Math.floor(100000 + Math.random() * 900000);
-  }
-
-  document.getElementById("ordernowbutton").addEventListener("click", function () {
-
-    if (!loggedInUserEmail) {
-      alert("User not ready. Please wait...");
-      return;
+        alert("Invalid coupon code");
     }
 
-    const orderNumber = generateOrderNumber();
+});
+</script>
 
-    const templateParams = {
-      order_number: orderNumber,
-      to_email: loggedInUserEmail
-    };
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
-    emailjs.send("service_iaotbjf", "template_82bvbdb", templateParams)
-      .then(function () {
-        alert("Order sent to " + loggedInUserEmail + 
-              "\nOrder ID: " + orderNumber);
-      })
-      .catch(function (error) {
-        console.error("Email failed:", error);
-      });
+document.getElementById("paybtn").addEventListener("click", function(){
 
-  });
-</script>-->
+const cardNumber = document.getElementById("cardnumber").value.trim();
+const expiry = document.getElementById("expiry").value.trim();
+const cvc = document.getElementById("cvc").value.trim();
 
+const message = document.getElementById("paymentMessage");
 
+const testCard = "2121212121212121";
+const testExpiry = "12/30";
+const testCVC = "101";
+
+if(cardNumber === testCard && expiry === testExpiry && cvc === testCVC){
+
+message.textContent = "Card successfully accepted";
+message.style.color = "green";
+
+}else{
+
+message.textContent = "Card declined";
+message.style.color = "red";
+
+}
+
+});
+
+});
+</script>
 
 <script>
   firebase.auth().onAuthStateChanged(function(user) {
@@ -1129,7 +1140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", function(event) {
 
-    event.preventDefault(); // ✅ STOP PAGE REFRESH
+    event.preventDefault(); //  STOP PAGE REFRESH
 
     const email = document.getElementById("footer-email").value;
     const message = document.getElementById("footer-message").value;
