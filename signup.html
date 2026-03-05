@@ -582,7 +582,46 @@
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
 
+  // Initialize EmailJS
+  emailjs.init("npcEIBGLCvNUKmJ-Y"); // replace
+
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function(event) {
+
+    event.preventDefault(); //  STOP PAGE REFRESH
+
+    const email = document.getElementById("footer-email").value;
+    const message = document.getElementById("footer-message").value;
+
+    if (!email || !message) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    emailjs.send(
+      "service_iaotbjf", 
+      "template_aiuupch",
+      {
+        from_email: email,
+        message: message
+      }
+    )
+    .then(function() {
+      alert("Email sent successfully!");
+      form.reset();
+    })
+    .catch(function(error) {
+      alert("Email failed!");
+      console.log(error);
+    });
+
+  });
+
+</script>
 
 
 </body>
